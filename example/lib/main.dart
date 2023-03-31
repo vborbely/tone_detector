@@ -6,7 +6,7 @@ import 'package:tone_detector/tone_detector.dart';
 import '.env.dart';
 
 void main() {
-  TD.configure(apiKey: toneDetectorServiceKey);
+  TD.configure(apiKey: toneDetectorServiceKey ?? '');
   runApp(const MyApp());
 }
 
@@ -18,7 +18,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Tone Detector Example',
       theme: ThemeData(
-        scaffoldBackgroundColor: Colors.black,
+        scaffoldBackgroundColor: Colors.grey.shade200,
         primarySwatch: Colors.yellow,
         textTheme: const TextTheme(
           bodyLarge: TextStyle(color: Colors.white),
@@ -43,8 +43,12 @@ class MyHomePage extends StatelessWidget {
       ),
       body: Center(
         child: Column(
+          mainAxisSize: MainAxisSize.min,
           children: [
-            ElevatedButton(onPressed: () => controller.analyze('I am angry'), child: const Text('Analyze')),
+            ElevatedButton(
+              onPressed: () => controller.analyze('I am angry', aggressiveness: 0.4),
+              child: const Text('Analyze'),
+            ),
             ToneDetectorWidget(
               controller: controller,
             ),

@@ -1,4 +1,4 @@
-ToneDetectorConfig? _config = null;
+ToneDetectorConfig? _config;
 
 class ToneDetectorConfig {
   final String apiKey;
