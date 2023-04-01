@@ -35,11 +35,9 @@ class ToneDetectorController {
 
   Future<void> analyze(String inputText, {double? aggressiveness}) async {
     final config = TD.config;
-    double? aggr = (aggressiveness == null && config.apiKey.isEmpty)
-        ? 0.5
-        : aggressiveness;
-    aggr = (aggr ?? 0.0) > 1.0 ? 1.0 : aggr;
-    aggr = (aggr ?? 0.0) < 0.0 ? 0.0 : aggr;
+    double? aggr = aggressiveness ?? (config.apiKey.isEmpty ? 0.5 : null);
+    aggr = aggr != null && aggr > 1.0 ? 1.0 : aggr;
+    aggr = aggr != null && aggr < 0.0 ? 0.0 : aggr;
 
     try {
       state = ToneDetectorState.loading;

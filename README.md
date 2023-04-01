@@ -8,6 +8,8 @@ It can detect the tone of the text using Chat GPT API.
 * Supported analysis:
   * Aggressivity : range from 0.0 to 1.0, where 1.0 is extremly aggressive.
 
+![in use](example/screenshots/screencapture01.gif)
+
 ## Getting started
 
 1. Request a secure API key for the endpoint at viktor [at] uira-tervezve.hu address.

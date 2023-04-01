@@ -37,9 +37,9 @@ class _ToneDetectorWidgetState extends State<ToneDetectorWidget> {
           } else if (value == ToneDetectorState.loading) {
             return _loading();
           } else if (value == ToneDetectorState.error) {
-            return const Text("Error");
+            return const Text('Error happened.');
           } else {
-            return const Text("Initial");
+            return _mainContainer(child: const BarMeter(rate: 0));
           }
         });
   }

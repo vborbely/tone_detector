@@ -3,7 +3,7 @@ import '../../domain/entities/tone_analysis.dart';
 class ToneAnalysisDto {
   final String version;
   final String input;
-  final double aggressive;
+  final String aggressive;
 
   ToneAnalysisDto({
     required this.version,
@@ -25,7 +25,7 @@ extension TADto on ToneAnalysisDto {
     return ToneAnalysis(
       version: version,
       input: input,
-      aggressive: aggressive,
+      aggressive: double.tryParse(aggressive) ?? 0.0,
     );
   }
 }
