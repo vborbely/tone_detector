@@ -13,6 +13,7 @@ class Api {
   // static const String BASE_URL = "http://localhost:5001/my-apis/toneAnalysis";
   static String apiKey = TD.config.apiKey;
 
+  /// Call the fetchToneAnalysis function to retrieve the tone analysis as a [ToneAnalysis] object.
   static Future<ToneAnalysis> fetchToneAnalysis(String query, {double? aggressiveness}) async {
     if (aggressiveness != null) {
       return await _generateSample(aggressiveness);

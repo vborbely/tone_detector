@@ -20,7 +20,6 @@ class ToneAnalysisDto {
   }
 }
 
-
 extension TADto on ToneAnalysisDto {
   ToneAnalysis toEntity() {
     return ToneAnalysis(
@@ -30,6 +29,3 @@ extension TADto on ToneAnalysisDto {
     );
   }
 }
-
-
-

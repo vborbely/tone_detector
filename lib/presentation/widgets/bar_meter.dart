@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 
 const _kBarWidth = 8.0;
 
+/// A widget that displays a tone analysis as a bar chart.
 class BarMeter extends StatelessWidget {
   final int rate;
   final int maxRate;
