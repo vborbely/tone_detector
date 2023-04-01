@@ -46,7 +46,8 @@ class MyHomePage extends StatelessWidget {
           mainAxisSize: MainAxisSize.min,
           children: [
             ElevatedButton(
-              onPressed: () => controller.analyze('I am angry', aggressiveness: 0.4),
+              onPressed: () =>
+                  controller.analyze('I am angry', aggressiveness: 0.4),
               child: const Text('Analyze'),
             ),
             ToneDetectorWidget(

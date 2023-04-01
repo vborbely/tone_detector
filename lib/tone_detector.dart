@@ -15,7 +15,8 @@ const _kBarMeterMaxRate = 5;
 class ToneDetectorWidget extends StatefulWidget {
   final ToneDetectorController controller;
 
-  const ToneDetectorWidget({Key? key, required this.controller}) : super(key: key);
+  const ToneDetectorWidget({Key? key, required this.controller})
+      : super(key: key);
 
   @override
   State<ToneDetectorWidget> createState() => _ToneDetectorWidgetState();
@@ -28,7 +29,8 @@ class _ToneDetectorWidgetState extends State<ToneDetectorWidget> {
         valueListenable: widget.controller.stream,
         builder: (context, value, child) {
           if (value == ToneDetectorState.success) {
-            final aggressive = widget.controller.toneAnalysis?.aggressive ?? 0.0;
+            final aggressive =
+                widget.controller.toneAnalysis?.aggressive ?? 0.0;
             final rate = aggressive.ceil() * _kBarMeterMaxRate;
 
             return _mainContainer(child: BarMeter(rate: rate));

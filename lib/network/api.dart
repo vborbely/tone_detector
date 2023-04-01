@@ -8,13 +8,15 @@ import '../domain/config/config.dart';
 import '../domain/entities/tone_analysis.dart';
 
 class Api {
-  static const String baseUrl = "https://us-central1-my-apis-567693.cloudfunctions.net/toneAnalysis";
+  static const String baseUrl =
+      "https://us-central1-my-apis-567693.cloudfunctions.net/toneAnalysis";
 
   // static const String BASE_URL = "http://localhost:5001/my-apis/toneAnalysis";
   static String apiKey = TD.config.apiKey;
 
   /// Call the fetchToneAnalysis function to retrieve the tone analysis as a [ToneAnalysis] object.
-  static Future<ToneAnalysis> fetchToneAnalysis(String query, {double? aggressiveness}) async {
+  static Future<ToneAnalysis> fetchToneAnalysis(String query,
+      {double? aggressiveness}) async {
     if (aggressiveness != null) {
       return await _generateSample(aggressiveness);
     }
@@ -43,9 +45,12 @@ class Api {
   static Future<ToneAnalysis> _generateSample(double aggressiveness) async {
     ToneAnalysis analysis = ToneAnalysis(
       version: "1.0.0",
-      input: "This is a sample text with aggressive tone set to $aggressiveness",
+      input:
+          "This is a sample text with aggressive tone set to $aggressiveness",
       aggressive: aggressiveness,
     );
-    return Future.delayed(Duration(milliseconds: Random.secure().nextInt(1000) + 500), () => analysis);
+    return Future.delayed(
+        Duration(milliseconds: Random.secure().nextInt(1000) + 500),
+        () => analysis);
   }
 }

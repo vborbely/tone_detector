@@ -29,19 +29,23 @@ class ToneDetectorController {
 
   ToneAnalysis? toneAnalysis;
 
-  ValueNotifier<ToneDetectorState> stream = ValueNotifier(ToneDetectorState.initial);
+  ValueNotifier<ToneDetectorState> stream =
+      ValueNotifier(ToneDetectorState.initial);
   ValueNotifier<bool> expanded = ValueNotifier(false);
 
   Future<void> analyze(String inputText, {double? aggressiveness}) async {
     final config = TD.config;
-    double? aggr = (aggressiveness == null && config.apiKey.isEmpty) ? 0.5 : aggressiveness;
+    double? aggr = (aggressiveness == null && config.apiKey.isEmpty)
+        ? 0.5
+        : aggressiveness;
     aggr = (aggr ?? 0.0) > 1.0 ? 1.0 : aggr;
     aggr = (aggr ?? 0.0) < 0.0 ? 0.0 : aggr;
 
     try {
       state = ToneDetectorState.loading;
       toneAnalysis = null;
-      final result = await Api.fetchToneAnalysis(inputText, aggressiveness: aggr);
+      final result =
+          await Api.fetchToneAnalysis(inputText, aggressiveness: aggr);
       toneAnalysis = result;
       state = ToneDetectorState.success;
     } catch (e) {

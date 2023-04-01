@@ -10,7 +10,9 @@ class BarMeter extends StatelessWidget {
   final int maxRate;
   final double width;
 
-  const BarMeter({Key? key, required this.rate, this.maxRate = 5, this.width = 10.0}) : super(key: key);
+  const BarMeter(
+      {Key? key, required this.rate, this.maxRate = 5, this.width = 10.0})
+      : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -39,7 +41,8 @@ class BarMeter extends StatelessWidget {
 }
 
 class _Bar extends StatelessWidget {
-  const _Bar({Key? key, required this.rate, required this.color}) : super(key: key);
+  const _Bar({Key? key, required this.rate, required this.color})
+      : super(key: key);
 
   final int rate;
   final Color color;
