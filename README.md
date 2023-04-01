@@ -15,7 +15,7 @@ It can detect the tone of the text using Chat GPT API.
 
 ```yaml 
 dependencies:
-  tone_detection: ^0.0.1
+  tone_detection: ^0.0.2
 ```
 
 ## Usage
