@@ -1,7 +1,8 @@
 name: tone_detector
 description: Tone Detector is a flutter package that detects the tone of a given text.
-version: 0.0.4
+version: 0.0.5
 homepage: https://www.uira-tervezve.hu
+repository: https://github.com/vborbely/tone_detector
 publish_to:
 
 funding:
